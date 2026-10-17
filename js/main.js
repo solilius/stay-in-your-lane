@@ -12,8 +12,11 @@ const $ = (s, el = document) => el.querySelector(s);
 const $$ = (s, el = document) => [...el.querySelectorAll(s)];
 
 // --- Links
+// Phones and in-app browsers (Instagram, Discord) often ignore new tabs, so open links in place there
+const touch = matchMedia("(pointer: coarse)").matches;
 $$("[data-link]").forEach(a => {
   const url = LINKS[a.dataset.link];
+  if (touch) a.removeAttribute("target");
   if (url) a.href = url;
   else {
     a.href = "#";
