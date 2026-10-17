@@ -1,8 +1,8 @@
 // Paste your links here. Empty ones stay as "coming soon" buttons.
 const LINKS = {
-  steam: "",      // https://store.steampowered.com/app/XXXXXXX/Stay_in_Your_Lane/
-  demo: "",       // https://lunarsol.itch.io/stay-in-your-lane
-  discord: "",    // https://discord.gg/XXXXXXX
+  steam: "https://store.steampowered.com/app/5040850/Stay_in_Your_Lane/",
+  demo: "https://solico.itch.io/stay-in-your-lane",
+  discord: "https://discord.gg/ymjFMzNECS",
   youtube: "",    // full YouTube trailer URL; also replaces the local trailer video
   x: "",          // https://x.com/...
   instagram: "",  // https://instagram.com/...
@@ -94,7 +94,7 @@ function setFaction(key) {
   $("#factionTraits").innerHTML = f.traits.map(t => `<li>${t}</li>`).join("");
   $("#unitGrid").innerHTML = f.units.map(u => `
     <button class="tile" data-id="${u.id}">
-      <img src="assets/img/units/${u.id}.webp" alt="">
+      <span class="face"><img src="assets/img/units/${u.id}.webp" alt=""></span>
       <span>${u.name}</span>
       <small><img src="assets/img/coin.svg" alt="">${u.cost}</small>
     </button>`).join("");
@@ -148,6 +148,12 @@ setFaction("herd");
 
 // --- Game mods as stickers
 $("#mods").innerHTML = MODS.map((m, i) => `<div class="mod" style="--r:${[-2, 1.5, -1, 2, -1.5, 1][i]}deg"><h4>${m.name}</h4><p>${m.text}</p></div>`).join("");
+
+// --- Outlined text (see .ol in style.css)
+$$(".title, .subtitle, .versus__vs, .mode__art--vs span, .mod h4, .mini__banner p").forEach(el => {
+  el.classList.add("ol");
+  el.dataset.text = el.innerText;
+});
 
 // --- Screenshot lightbox
 const lb = $("#lightbox");

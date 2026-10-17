@@ -1,9 +1,8 @@
 # Stay in Your Lane website
 
-Static site, no build step. Upload this folder to GitHub Pages, Netlify, itch.io or any web host.
+Static site, no build step. Served by GitHub Pages from the `main` branch root.
 
-- **Links:** paste the Steam, demo, Discord, YouTube, X and Instagram URLs into `LINKS` at the top of `js/main.js`. Empty links become "coming soon" buttons, and empty social icons are hidden. Setting `youtube` swaps the local trailer for the YouTube embed.
-- **Unit stats and copy:** `js/data.js` (copied from GDD.md, so update it when balance changes).
-- **Images and clips:** regenerate from the Unity sprites and `Trailer/*.mov` with `python3 Website/tools/prepare_media.py` (needs ffmpeg and Pillow).
-- **Preview locally:** `python3 -m http.server 8765 --directory Website`, then open http://localhost:8765.
-# stay-in-your-lane-website
+- **Links:** Steam, demo, Discord, YouTube, X and Instagram URLs live in `LINKS` at the top of `js/main.js`. Empty links become "coming soon" buttons, and empty social icons are hidden. Setting `youtube` swaps the local trailer for the YouTube embed.
+- **Unit stats and copy:** `js/data.js` (copied from the game's GDD.md, so update it when balance changes).
+- **Images and clips:** regenerate from the Unity project with `python3 tools/prepare_media.py` (needs ffmpeg and Pillow; expects the game at `../Unity/TagOfWar`, or set `GAME_DIR`).
+- **Preview locally:** `python3 -m http.server 8765`, then open http://localhost:8765.

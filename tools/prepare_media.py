@@ -1,13 +1,15 @@
-# Regenerates Website/assets from the Unity sprites and raw Trailer/*.mov captures.
-# Run from the repo root: python3 Website/tools/prepare_media.py
+# Regenerates assets/ from the Unity project's sprites and raw Trailer/*.mov captures.
+# Run: python3 tools/prepare_media.py  (expects the game at ../Unity/TagOfWar, or set GAME_DIR)
+import os
 import subprocess
 from pathlib import Path
 from PIL import Image
 
-ROOT = Path(__file__).resolve().parents[2]
+SITE = Path(__file__).resolve().parents[1]
+ROOT = Path(os.environ.get("GAME_DIR", SITE.parent / "Unity/TagOfWar"))
 SPR = ROOT / "Assets/GameContent/Sprites"
 TRAILER = ROOT / "Trailer"
-OUT = ROOT / "Website/assets"
+OUT = SITE / "assets"
 IMG, VID = OUT / "img", OUT / "video"
 for d in (IMG, VID, IMG / "units", IMG / "icons", IMG / "shots"):
     d.mkdir(parents=True, exist_ok=True)
@@ -25,6 +27,16 @@ def save(src, dst, width=None, height=None, box=None, q=86):
     if width or height:
         im.thumbnail((width or 99999, height or 99999), Image.LANCZOS)
     im.save(dst, "WEBP", quality=q, method=6)
+
+
+def head(src, dst, size=220):
+    # Trim to the drawing, center it horizontally and sit it on the bottom edge
+    im = Image.open(src).convert("RGBA")
+    im = im.crop(im.getbbox())
+    side = max(im.size)
+    sq = Image.new("RGBA", (side, side))
+    sq.paste(im, ((side - im.width) // 2, side - im.height))
+    sq.resize((size, size), Image.LANCZOS).save(dst, "WEBP", quality=86, method=6)
 
 
 def atlas(src, dst, x, y, w, h, width):
@@ -90,8 +102,8 @@ HEADS = {
     "guerrilla-warfare": ("Guerrilla Warfare Head", "Guerrilla Warfare AWK Head"),
 }
 for slug, (n, a) in HEADS.items():
-    save(SPR / f"Units/UnitIcons/{n}.png", IMG / f"units/{slug}.webp", 220)
-    save(SPR / f"Units/UnitIcons/{a}.png", IMG / f"units/{slug}-awk.webp", 220)
+    head(SPR / f"Units/UnitIcons/{n}.png", IMG / f"units/{slug}.webp")
+    head(SPR / f"Units/UnitIcons/{a}.png", IMG / f"units/{slug}-awk.webp")
 
 # --- Spell and awakening icons
 for f in ("Ram", "Bulls eye", "Horse Power", "last resort", "Legendairy", "Snout", "Apex", "Beehind",

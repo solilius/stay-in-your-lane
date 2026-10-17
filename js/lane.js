@@ -28,7 +28,7 @@
 
   cardsEl.innerHTML = PICKS.herd.map((u, i) => `
     <button class="mini__card" data-i="${i}">
-      <img src="assets/img/units/${u.id}.webp" alt="">
+      <span class="face"><img src="assets/img/units/${u.id}.webp" alt=""></span>
       <span>${u.name}</span>
       <small><img src="assets/img/coin.svg" alt="">${u.cost}</small>
       <i class="cd"></i>
@@ -67,8 +67,8 @@
 
   function popNumber(x, bottom, dmg, crit) {
     const n = document.createElement("div");
-    n.className = `mini__dmg${crit ? " crit" : ""}`;
-    n.textContent = dmg;
+    n.className = `mini__dmg ol${crit ? " crit" : ""}`;
+    n.textContent = n.dataset.text = dmg;
     n.style.left = `${x}%`;
     n.style.bottom = `${bottom}px`;
     field.appendChild(n);
@@ -183,7 +183,8 @@
   function end(msg) {
     running = false;
     drawHud();
-    document.getElementById("miniMsg").textContent = msg;
+    const m = document.getElementById("miniMsg");
+    m.textContent = m.dataset.text = msg;
     banner.hidden = false;
   }
 
