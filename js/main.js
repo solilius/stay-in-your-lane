@@ -150,7 +150,7 @@ setFaction("herd");
 $("#mods").innerHTML = MODS.map((m, i) => `<div class="mod" style="--r:${[-2, 1.5, -1, 2, -1.5, 1][i]}deg"><h4>${m.name}</h4><p>${m.text}</p></div>`).join("");
 
 // --- Outlined text (see .ol in style.css)
-$$(".title, .subtitle, .versus__vs, .mode__art--vs span, .mod h4, .mini__banner p").forEach(el => {
+$$(".title, .subtitle, .versus__vs, .mode__art--vs span, .mod h4").forEach(el => {
   el.classList.add("ol");
   el.dataset.text = el.innerText;
 });
@@ -169,7 +169,7 @@ addEventListener("keydown", e => { if (e.key === "Escape") lb.hidden = true; });
 const revealer = new IntersectionObserver(es => es.forEach(e => {
   if (e.isIntersecting) { e.target.classList.add("is-in"); revealer.unobserve(e.target); }
 }), { threshold: .15 });
-$$(".title, .lede, .steps, .versus, .roster, .mode, .mods, .tv, .shots, .mini").forEach(el => {
+$$(".title, .lede, .steps, .versus, .roster, .mode, .mods, .tv, .shots").forEach(el => {
   el.classList.add("reveal");
   revealer.observe(el);
 });

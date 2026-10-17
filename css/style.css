@@ -277,59 +277,6 @@ h1, h2, h3, h4 { font-family: var(--font-head); font-weight: 400; margin: 0; let
 .shots button:hover { transform: scale(1.05) rotate(0); z-index: 2; }
 .shots img { width: 100%; height: 100%; object-fit: cover; }
 
-/* ---------- Mini lane ---------- */
-.lane-sec { padding: 90px 0 100px; background: linear-gradient(var(--sky-top), var(--sky-bot) 70%); }
-.mini { max-width: 1000px; margin: 0 auto; background: var(--cream); border: 4px solid var(--ink); border-radius: 28px; box-shadow: 0 10px 0 var(--ink); padding: 18px; }
-.mini__hud { display: flex; align-items: center; gap: 14px; margin-bottom: 12px; }
-.mini__hp { flex: 1; height: 20px; border: 3px solid var(--ink); border-radius: 10px; background: #e7d8b4; overflow: hidden; }
-.mini__hp i { display: block; height: 100%; width: 100%; transition: width .25s; }
-.mini__hp--herd i { background: linear-gradient(#6aa6ff, var(--herd)); }
-.mini__hp--grove { transform: scaleX(-1); }
-.mini__hp--grove i { background: linear-gradient(#6fdc89, var(--grove)); }
-.mini__gold { display: flex; align-items: center; gap: 6px; font: 1.6rem var(--font-head); min-width: 92px; justify-content: center; }
-.mini__gold img { width: 30px; }
-.mini__field {
-  position: relative; height: 270px; border: 4px solid var(--ink); border-radius: 18px; overflow: hidden;
-  background: linear-gradient(#9fdcff, #e0f5ff 52%, var(--grass) 52%, var(--grass) 60%, var(--dirt) 60%);
-}
-.mini__base { position: absolute; bottom: 52px; width: 150px; filter: drop-shadow(0 5px 0 rgba(0,0,0,.25)); transition: transform .1s; }
-.mini__base--herd { left: -12px; }
-.mini__base--grove { right: -16px; }
-.mini__base.hit { transform: translateX(var(--kx, 0)) rotate(var(--kr, 0)); }
-.mini__unit { position: absolute; bottom: 44px; width: 74px; height: 74px; margin-left: -37px; will-change: left; }
-.mini__unit img { width: 100%; height: 100%; animation: walk .45s ease-in-out infinite alternate; filter: drop-shadow(0 4px 0 rgba(0,0,0,.25)); }
-.mini__unit.is-fighting img { animation: swing .35s ease-in-out infinite alternate; }
-.mini__unit.grove img { transform: scaleX(-1); }
-.mini__unit i { position: absolute; top: -8px; left: 8px; right: 8px; height: 7px; border: 2px solid var(--ink); border-radius: 4px; background: #e7d8b4; overflow: hidden; }
-.mini__unit i b { display: block; height: 100%; background: var(--herd); }
-.mini__unit.grove i b { background: var(--grove); }
-.mini__unit.dead { transition: opacity .4s, transform .4s; opacity: 0; transform: translateY(-30px) rotate(25deg); }
-.mini__dmg { position: absolute; z-index: 5; font: 1.4rem var(--font-head); --ol-fill: #ffcf33; pointer-events: none; animation: float .8s ease-out forwards; }
-.mini__dmg.crit { --ol-fill: #ff5b3a; font-size: 2rem; }
-.mini__proj { position: absolute; z-index: 4; width: 14px; height: 14px; border-radius: 50%; background: #fff; border: 3px solid var(--ink); pointer-events: none; transition: left .3s linear, bottom .3s ease-out; }
-.mini__start[hidden] { display: none; }
-.mini__start { position: absolute; left: 50%; top: 50%; translate: -50% -50%; z-index: 6; }
-.mini__banner { position: absolute; inset: 0; z-index: 7; display: grid; place-content: center; text-align: center; gap: 14px; background: rgba(43,26,14,.6); }
-.mini__banner[hidden] { display: none; }
-.mini__banner p { margin: 0; font: clamp(1.8rem, 4vw, 2.8rem) var(--font-head); --ol-fill: var(--gold); }
-.mini__banner-btns { display: flex; gap: 14px; justify-content: center; flex-wrap: wrap; }
-.mini__cards { display: flex; gap: 12px; justify-content: center; margin-top: 14px; flex-wrap: wrap; }
-.mini__card { position: relative; display: flex; flex-direction: column; align-items: center; gap: 2px; width: 108px; padding: 8px 6px; background: #fff; border: 3px solid var(--ink); border-radius: 14px; box-shadow: 0 5px 0 var(--ink); overflow: hidden; transition: transform .1s; }
-.mini__card .face { width: 58px; }
-.mini__card span { font: .9rem/1.1 var(--font-head); }
-.mini__card small { display: flex; align-items: center; gap: 3px; font-weight: 900; }
-.mini__card small img { width: 15px; height: 15px; border: 0; background: none; }
-.mini__card:active { transform: translateY(4px); box-shadow: 0 1px 0 var(--ink); }
-.mini__card:disabled { filter: grayscale(.9); opacity: .7; cursor: not-allowed; }
-.mini__card .cd { position: absolute; inset: auto 0 0; height: 0; background: rgba(0,0,0,.35); }
-@keyframes walk { from { transform: translateY(0) rotate(-6deg); } to { transform: translateY(-8px) rotate(6deg); } }
-.mini__unit.grove img { animation-name: walkG; }
-.mini__unit.grove.is-fighting img { animation-name: swingG; }
-@keyframes walkG { from { transform: scaleX(-1) translateY(0) rotate(-6deg); } to { transform: scaleX(-1) translateY(-8px) rotate(6deg); } }
-@keyframes swing { from { transform: rotate(-4deg); } to { transform: translateX(8px) rotate(14deg); } }
-@keyframes swingG { from { transform: scaleX(-1) rotate(-4deg); } to { transform: scaleX(-1) translateX(8px) rotate(14deg); } }
-@keyframes float { from { opacity: 1; transform: translate(-50%, 0) scale(.6); } 25% { transform: translate(-50%, -14px) scale(1.15); } to { opacity: 0; transform: translate(-50%, -50px) scale(1); } }
-
 /* ---------- Final CTA ---------- */
 .final { position: relative; padding: 120px 16px 130px; text-align: center; background: url(../assets/img/bg-lane.webp) center 60%/cover; }
 .final::before { content: ""; position: absolute; inset: 0; background: linear-gradient(rgba(20,10,4,.35), rgba(20,10,4,.65)); }
@@ -381,14 +328,6 @@ h1, h2, h3, h4 { font-family: var(--font-head); font-weight: 400; margin: 0; let
   .unit { padding: 16px; }
   .unit__name { font-size: 2rem; }
   .btn--lg { font-size: 1.2rem; }
-  .mini { padding: 10px; }
-  .mini__field { height: 220px; }
-  .mini__base { width: 100px; }
-  .mini__unit { width: 50px; height: 50px; margin-left: -25px; }
-  .mini__cards { gap: 6px; flex-wrap: nowrap; }
-  .mini__card { width: auto; flex: 1; min-width: 0; padding: 6px 2px; }
-  .mini__card span { font-size: .78rem; }
-  .mini__card .face { width: 46px; }
   .ticker__track span { font-size: 1.25rem; }
   .ticker__track img { width: 36px; height: 36px; }
 }

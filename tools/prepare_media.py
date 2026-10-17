@@ -39,12 +39,6 @@ def head(src, dst, size=220):
     sq.resize((size, size), Image.LANCZOS).save(dst, "WEBP", quality=86, method=6)
 
 
-def atlas(src, dst, x, y, w, h, width):
-    # Unity sprite rects count y from the bottom
-    H = Image.open(src).height
-    save(src, dst, width, box=(x, H - y - h, x + w, H - y))
-
-
 def ffmpeg(*args):
     subprocess.run(["ffmpeg", "-v", "error", "-y", *args], check=True)
 
@@ -79,9 +73,7 @@ save(SPR / "Backgrounds/BG 3.png", IMG / "bg-hills.webp", 2000, q=80)
 for c in ("Buck", "Kip", "Capricos", "Monpa"):
     save(SPR / f"Characters/{c}.png", IMG / f"char-{c.lower()}.webp", height=560)
 
-# --- Bases and turrets (atlas slices)
-atlas(SPR / "Buildings/Base Herd.png", IMG / "base-herd.webp", 164, 98, 1387, 1056, 420)
-atlas(SPR / "Buildings/Base VerdantGrove.png", IMG / "base-grove.webp", 200, 1523, 1629, 1170, 420)
+# --- Turrets
 save(SPR / "Units/UnitIcons/Turret Herd.png", IMG / "turret-herd.webp", 220)
 save(SPR / "Units/UnitIcons/Turret Verfant.png", IMG / "turret-grove.webp", 220)
 
