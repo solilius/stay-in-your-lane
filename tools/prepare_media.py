@@ -142,4 +142,7 @@ ffmpeg("-i", str(TRAILER / "StayInYourLane_Trailer_v30_Steam_1080p.mp4"), "-vf",
        "-movflags", "+faststart", str(VID / "trailer.mp4"))
 still_src = TRAILER / "StayInYourLane_Thumbnail_v2_1920x1080.png"
 save(still_src, IMG / "trailer-poster.webp", 1600, q=82)
+# Link preview image (1200x630, top of the thumbnail so the logo keeps its headroom)
+thumb = Image.open(still_src).convert("RGB")
+thumb.crop((0, 0, thumb.width, round(thumb.width * 630 / 1200))).resize((1200, 630), Image.LANCZOS).save(IMG / "share.jpg", quality=88, optimize=True)
 print("done")
