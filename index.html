@@ -1,0 +1,248 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Stay in Your Lane</title>
+  <meta name="description" content="Stay in Your Lane is a side-scrolling real-time strategy game. One lane, no way around. Summon pun-named animals, cast spells and push until their base falls.">
+  <meta property="og:title" content="Stay in Your Lane">
+  <meta property="og:description" content="A side-scrolling real-time strategy game. One lane. No way around.">
+  <meta property="og:image" content="assets/img/trailer-poster.webp">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="theme-color" content="#5fbf3a">
+  <link rel="icon" href="assets/img/favicon.png">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Lilita+One&family=Nunito:wght@600;800;900&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+
+<header class="nav" id="nav">
+  <a class="nav__logo" href="#top"><img src="assets/img/logo.webp" alt="Stay in Your Lane"></a>
+  <nav class="nav__links" id="navLinks">
+    <a href="#play">How it plays</a>
+    <a href="#factions">Factions</a>
+    <a href="#modes">Modes</a>
+    <a href="#trailer">Trailer</a>
+    <a href="#lane">Try it</a>
+  </nav>
+  <a class="btn btn--orange btn--sm nav__cta" data-link="steam" target="_blank" rel="noopener">Wishlist</a>
+  <button class="nav__burger" id="burger" aria-label="Menu"><span></span><span></span><span></span></button>
+</header>
+
+<!-- HERO -->
+<section class="hero" id="top">
+  <video class="hero__video" autoplay muted loop playsinline preload="auto" poster="assets/img/hero-poster.webp">
+    <source src="assets/video/hero.mp4" type="video/mp4">
+  </video>
+  <div class="hero__shade"></div>
+  <div class="hero__content">
+    <img class="hero__logo" id="heroLogo" src="assets/img/logo.webp" alt="Stay in Your Lane">
+    <p class="plank">A side-scrolling real-time strategy game</p>
+    <p class="hero__sub">One lane. No way around. Summon pun-named animals, cast silly spells and push until their base falls.</p>
+    <div class="hero__ctas">
+      <a class="btn btn--orange btn--lg" data-link="steam" target="_blank" rel="noopener"><img src="assets/img/steam.webp" alt="">Wishlist on Steam</a>
+      <a class="btn btn--green btn--lg" data-link="demo" target="_blank" rel="noopener">Play free in browser</a>
+    </div>
+    <p class="hero__platforms">Windows · macOS · Browser demo</p>
+  </div>
+  <a class="hero__scroll" href="#play" aria-label="Scroll down"><span></span></a>
+</section>
+
+<!-- TICKER -->
+<div class="ticker" aria-hidden="true"><div class="ticker__track" id="ticker"></div></div>
+
+<!-- HOW IT PLAYS -->
+<section class="sky" id="play">
+  <div class="clouds"><i></i><i></i><i></i><i></i></div>
+  <div class="wrap">
+    <h2 class="title">How a match plays</h2>
+    <p class="lede">You can't steer your units. Once they're out, they march. Your job is everything else.</p>
+    <div class="steps" id="steps">
+      <ol class="steps__list">
+        <li class="is-active" data-video="economy"><b>1</b><div><h3>Mine gold</h3><p>Send miners to the gold mine. More miners, more units. Fewer miners, faster attack.</p></div><i class="steps__bar"></i></li>
+        <li data-video="tech"><b>2</b><div><h3>Unlock new units</h3><p>Spend gold on your tech tree to unlock units, spells and upgrades in the order you want.</p></div><i class="steps__bar"></i></li>
+        <li data-video="spells"><b>3</b><div><h3>Cast spells</h3><p>Use mana to root, heal, shield or blast at the moment the fight turns.</p></div><i class="steps__bar"></i></li>
+        <li data-video="defenses"><b>4</b><div><h3>Build defenses</h3><p>Turrets and landmines buy time when the other side pushes too hard.</p></div><i class="steps__bar"></i></li>
+        <li data-video="push"><b>5</b><div><h3>Bring their base down</h3><p>Win the lane, keep pushing and knock the enemy base flat.</p></div><i class="steps__bar"></i></li>
+      </ol>
+      <div class="steps__screen">
+        <video id="stepVideo" muted playsinline preload="metadata" src="assets/video/economy.mp4"></video>
+      </div>
+    </div>
+  </div>
+</section>
+
+<div class="edge edge--grass"></div>
+
+<!-- FACTIONS -->
+<section class="factions" id="factions">
+  <div class="wrap">
+    <h2 class="title">Pick your side</h2>
+    <p class="lede">Every unit, spell and upgrade is an animal pun. Every pun can win you the match.</p>
+    <div class="versus">
+      <button class="side side--herd is-active" data-faction="herd">
+        <img src="assets/img/crest-herd.webp" alt="">
+        <span class="side__name">The Herd</span>
+        <span class="side__hint">Farm animals</span>
+      </button>
+      <div class="versus__vs">VS</div>
+      <button class="side side--grove" data-faction="grove">
+        <img src="assets/img/crest-grove.webp" alt="">
+        <span class="side__name">Verdant Grove</span>
+        <span class="side__hint">Jungle animals</span>
+      </button>
+    </div>
+
+    <div class="roster" id="roster">
+      <div class="roster__info">
+        <p class="roster__blurb" id="factionBlurb"></p>
+        <ul class="chips" id="factionTraits"></ul>
+      </div>
+      <div class="roster__grid" id="unitGrid"></div>
+
+      <article class="unit" id="unitCard">
+        <div class="unit__portrait">
+          <img id="unitImg" alt="">
+          <button class="btn btn--purple btn--sm unit__awaken" id="awakenBtn">Awaken!</button>
+        </div>
+        <div class="unit__body">
+          <p class="unit__role" id="unitRole"></p>
+          <h3 class="unit__name" id="unitName"></h3>
+          <p class="unit__quip" id="unitQuip"></p>
+          <dl class="stats" id="unitStats"></dl>
+          <div class="awk" id="unitAwk">
+            <img id="awkIcon" alt="">
+            <div><p class="awk__label">Awakening after <span id="awkN"></span> summons</p><h4 id="awkName"></h4><p id="awkText"></p></div>
+          </div>
+        </div>
+      </article>
+
+      <h3 class="subtitle">Spells</h3>
+      <div class="spells" id="spellList"></div>
+    </div>
+  </div>
+</section>
+
+<div class="edge edge--dirt"></div>
+
+<!-- MODES -->
+<section class="modes" id="modes">
+  <div class="wrap">
+    <h2 class="title">Ways to play</h2>
+    <div class="modes__grid">
+      <article class="mode mode--campaign">
+        <div class="mode__art">
+          <img class="mode__char mode__char--l" src="assets/img/char-buck.webp" alt="Buck">
+          <img class="mode__char mode__char--r" src="assets/img/char-capricos.webp" alt="Capricos">
+        </div>
+        <h3>Campaign</h3>
+        <p>Buck the goat was told in a dream to stay in his lane. His brother Capricos is standing in the middle of it. Learn the game one fight at a time on a road into the jungle.</p>
+      </article>
+      <article class="mode mode--challenge">
+        <div class="mode__art">
+          <img class="mode__char mode__char--c" src="assets/img/char-monpa.webp" alt="Monpa">
+        </div>
+        <h3>Challenges</h3>
+        <p>Puzzle battles with fixed gold, fixed units and one clever answer. Timing is key.</p>
+      </article>
+      <article class="mode mode--custom">
+        <div class="mode__art mode__art--vs">
+          <img src="assets/img/crest-herd.webp" alt="">
+          <span>1v1<br>2v2</span>
+          <img src="assets/img/crest-grove.webp" alt="">
+        </div>
+        <h3>Custom Battle</h3>
+        <p>Play against the computer on Easy, Normal or Hard, or go online with friends and random players. Invite friends straight from Steam.</p>
+      </article>
+    </div>
+
+    <h3 class="subtitle">Mix it up with game mods</h3>
+    <div class="mods" id="mods"></div>
+  </div>
+</section>
+
+<div class="edge edge--jungle"></div>
+
+<!-- TRAILER + SCREENSHOTS -->
+<section class="jungle" id="trailer">
+  <div class="wrap">
+    <h2 class="title">Watch the trailer</h2>
+    <div class="tv" id="tv">
+      <video controls preload="none" poster="assets/img/trailer-poster.webp">
+        <source src="assets/video/trailer.mp4" type="video/mp4">
+      </video>
+    </div>
+    <div class="shots" id="shots">
+      <button data-src="assets/img/shots/farm-fight.webp"><img loading="lazy" src="assets/img/shots/farm-fight.webp" alt="Herd and Grove units clash on the farm lane"></button>
+      <button data-src="assets/img/shots/jungle-brawl.webp"><img loading="lazy" src="assets/img/shots/jungle-brawl.webp" alt="A brawl in the jungle"></button>
+      <button data-src="assets/img/shots/base-down.webp"><img loading="lazy" src="assets/img/shots/base-down.webp" alt="A Grove base crumbling"></button>
+      <button data-src="assets/img/shots/gorilla.webp"><img loading="lazy" src="assets/img/shots/gorilla.webp" alt="Guerrilla Warfare in the jungle"></button>
+      <button data-src="assets/img/shots/big-crits.webp"><img loading="lazy" src="assets/img/shots/big-crits.webp" alt="Huge critical hits at the base"></button>
+      <button data-src="assets/img/shots/tech-tree.webp"><img loading="lazy" src="assets/img/shots/tech-tree.webp" alt="The Verdant Grove tech tree"></button>
+      <button data-src="assets/img/shots/campaign.webp"><img loading="lazy" src="assets/img/shots/campaign.webp" alt="The campaign map"></button>
+      <button data-src="assets/img/shots/victory.webp"><img loading="lazy" src="assets/img/shots/victory.webp" alt="Victory screen"></button>
+    </div>
+  </div>
+</section>
+
+<!-- MINI LANE -->
+<section class="lane-sec" id="lane">
+  <div class="wrap">
+    <h2 class="title">Try it right here</h2>
+    <p class="lede">A tiny taste of the lane. Tap a unit to send it. Your gold refills over time. Knock down the Grove base.</p>
+    <div class="mini" id="mini">
+      <div class="mini__hud">
+        <div class="mini__hp mini__hp--herd"><i id="hpHerd"></i></div>
+        <div class="mini__gold"><img src="assets/img/coin.svg" alt=""><span id="miniGold">100</span></div>
+        <div class="mini__hp mini__hp--grove"><i id="hpGrove"></i></div>
+      </div>
+      <div class="mini__field" id="field">
+        <img class="mini__base mini__base--herd" src="assets/img/base-herd.webp" alt="">
+        <img class="mini__base mini__base--grove" src="assets/img/base-grove.webp" alt="">
+        <div class="mini__banner" id="miniBanner" hidden>
+          <p id="miniMsg"></p>
+          <div class="mini__banner-btns">
+            <button class="btn btn--green btn--sm" id="miniAgain">Play again</button>
+            <a class="btn btn--orange btn--sm" data-link="steam" target="_blank" rel="noopener">Wishlist</a>
+          </div>
+        </div>
+        <button class="mini__start btn btn--orange btn--lg" id="miniStart">Start</button>
+      </div>
+      <div class="mini__cards" id="miniCards"></div>
+    </div>
+  </div>
+</section>
+
+<!-- FINAL CTA -->
+<section class="final" id="community">
+  <div class="final__inner">
+    <img class="final__logo" src="assets/img/logo.webp" alt="Stay in Your Lane">
+    <h2 class="title title--light">Wishlist it and join the herd</h2>
+    <p class="lede lede--light">Wishlisting on Steam helps a small indie game a lot. Come say hi in Discord, share feedback and find people to play with.</p>
+    <div class="hero__ctas">
+      <a class="btn btn--orange btn--lg" data-link="steam" target="_blank" rel="noopener"><img src="assets/img/steam.webp" alt="">Wishlist on Steam</a>
+      <a class="btn btn--discord btn--lg" data-link="discord" target="_blank" rel="noopener"><img src="assets/img/discord.webp" alt="">Join the Discord</a>
+    </div>
+    <div class="socials">
+      <a data-link="x" target="_blank" rel="noopener" aria-label="X"><img src="assets/img/x.svg" alt=""></a>
+      <a data-link="instagram" target="_blank" rel="noopener" aria-label="Instagram"><img src="assets/img/instagram.svg" alt=""></a>
+      <a data-link="youtube" target="_blank" rel="noopener" aria-label="YouTube"><img src="assets/img/youtube.svg" alt=""></a>
+      <a data-link="demo" target="_blank" rel="noopener" aria-label="itch.io"><img src="assets/img/itch.svg" alt=""></a>
+    </div>
+  </div>
+</section>
+
+<footer class="footer">
+  <img src="assets/img/lunarsol.webp" alt="LunarSol Games">
+  <p>© 2026 LunarSol Games. Stay in Your Lane is in development; numbers and art may change.</p>
+</footer>
+
+<div class="lightbox" id="lightbox" hidden><img alt=""><button aria-label="Close">×</button></div>
+
+<script src="js/data.js"></script>
+<script src="js/main.js"></script>
+<script src="js/lane.js"></script>
+</body>
+</html>
