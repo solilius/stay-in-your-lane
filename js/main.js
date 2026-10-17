@@ -1,6 +1,6 @@
 // Paste your links here. Empty ones stay as "coming soon" buttons.
 const LINKS = {
-  steam: "https://store.steampowered.com/app/5040850/Stay_in_Your_Lane/",
+  steam: "https://store.steampowered.com/app/5040850/Stay_in_Your_Lane/?utm_source=website",
   demo: "https://solico.itch.io/stay-in-your-lane",
   discord: "https://discord.gg/ymjFMzNECS",
   youtube: "",    // full YouTube trailer URL; also replaces the local trailer video
