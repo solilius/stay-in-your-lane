@@ -204,13 +204,14 @@
 <section class="pub-sec pub-sec--sky">
   <div class="wrap">
     <h2 class="title">Similar games on Steam</h2>
-    <p class="lede">Games in the same lane-battle style and how they did.</p>
+    <p class="lede">Side-view lane battle games on Steam and how they sold.</p>
     <div class="comps-wrap">
       <table class="comps">
-        <thead><tr><th>Game</th><th>Released</th><th>Price</th><th style="text-align:right">Steam reviews</th><th style="text-align:right">Est. revenue</th></tr></thead>
+        <thead><tr><th>Game</th><th>Released</th><th>Price</th><th>Publisher</th><th style="text-align:right">Steam reviews</th><th style="text-align:right">Copies sold</th><th style="text-align:right">Revenue</th></tr></thead>
         <tbody id="comps"></tbody>
       </table>
     </div>
+    <p class="updated" id="compsNote"></p>
   </div>
 </section>
 
@@ -301,12 +302,16 @@ const STATS = {
   ],
 };
 
+const COMPS_NOTE = "Copies and revenue are Gamalytic estimates (gross, base game), October 2026.";
 const COMPS = [
-  { name: "Swords and Soldiers HD", year: "2012", price: "$0", reviews: 0, revenue: 0 },
-  { name: "Swords and Soldiers 2 Shawarmageddon", year: "2018", price: "$0", reviews: 0, revenue: 0 },
-  { name: "Warpips", year: "2022", price: "$0", reviews: 0, revenue: 0 },
-  { name: "Stick War: Castle Defence", year: "0", price: "$0", reviews: 0, revenue: 0 },
-  { name: "Kingdom Wars 2: Definitive Edition", year: "0", price: "$0", reviews: 0, revenue: 0 },
+  { name: "Kingdom Heroes 8", year: "2021", price: "$29.99", publisher: "UserJoy", reviews: 14721, copies: 389400, revenue: 7000000 },
+  { name: "Warpips", year: "2022", price: "$16.99", publisher: "Daedalic", reviews: 5236, copies: 405700, revenue: 1900000 },
+  { name: "Cannon Brawl", year: "2014", price: "$14.99", publisher: "Temple Gates", reviews: 801, copies: 48200, revenue: 301600 },
+  { name: "Swords and Soldiers HD", year: "2010", price: "$5.99", publisher: "Atari", reviews: 1062, copies: 64100, revenue: 204700 },
+  { name: "Swords and Soldiers 2 Shawarmageddon", year: "2018", price: "$9.99", publisher: "Atari", reviews: 324, copies: 23300, revenue: 117100 },
+  { name: "Battlecruisers", year: "2021", price: "$19.99", publisher: "Self-published", reviews: 435, copies: 23800, revenue: 88200 },
+  { name: "Open The Gates!", year: "2022", price: "$12.99", publisher: "Self-published", reviews: 79, copies: 2700, revenue: 15900 },
+  { name: "Stick War: Castle Defence", year: "2018", price: "$7.99", publisher: "FoG Games", reviews: 50, copies: 1800, revenue: 11700 },
 ];
 // ===================================================
 
@@ -332,9 +337,11 @@ $$("[data-group]").forEach(g => {
 });
 $("#updated").textContent = UPDATED;
 
+const short = n => n >= 1e6 ? (n / 1e6).toFixed(1).replace(/\.0$/, "") + "M" : n >= 1e3 ? Math.round(n / 1e3) + "K" : String(n);
 $("#comps").innerHTML = COMPS.map(c => `
-  <tr><td>${c.name}</td><td>${c.year}</td><td>${c.price}</td>
-  <td class="n">${fmt(c.reviews)}</td><td class="n">$${fmt(c.revenue)}</td></tr>`).join("");
+  <tr><td>${c.name}</td><td>${c.year}</td><td>${c.price}</td><td>${c.publisher}</td>
+  <td class="n">${fmt(c.reviews)}</td><td class="n">${short(c.copies)}</td><td class="n">$${short(c.revenue)}</td></tr>`).join("");
+$("#compsNote").textContent = COMPS_NOTE;
 
 // Outlined headings (same look as the main page)
 $$(".title").forEach(el => { el.classList.add("ol"); el.dataset.text = el.innerText; });
