@@ -276,6 +276,7 @@ h1, h2, h3, h4 { font-family: var(--font-head); font-weight: 400; margin: 0; let
 .shots button:nth-child(even) { transform: rotate(1deg); }
 .shots button:hover { transform: scale(1.05) rotate(0); z-index: 2; }
 .shots img { width: 100%; height: 100%; object-fit: cover; }
+.shots button:first-child { grid-column: span 2; grid-row: span 2; aspect-ratio: auto; }
 
 /* ---------- Final CTA ---------- */
 .final { position: relative; padding: 120px 16px 130px; text-align: center; background: url(../assets/img/bg-lane.webp) center 60%/cover; }
