@@ -3,7 +3,7 @@ const LINKS = {
   steam: "https://store.steampowered.com/app/5040850/Stay_in_Your_Lane/?utm_source=website",
   demo: "https://solico.itch.io/stay-in-your-lane",
   discord: "https://discord.gg/ymjFMzNECS",
-  youtube: "https://www.youtube.com/watch?v=MLVKLE3DFMg",    // full YouTube trailer URL; also replaces the local trailer video
+  youtube: "https://www.youtube.com/watch?v=8XWp7XKAjxk",    // full YouTube trailer URL; also replaces the local trailer video
   x: "",          // https://x.com/...
   instagram: "",  // https://instagram.com/...
 };
