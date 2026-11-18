@@ -102,7 +102,7 @@
   <div class="wrap">
     <h2 class="title">What I'm looking for</h2>
     <div class="card ask">
-      <p>The game is <strong>almost done and self-funded</strong>. A small optional budget (about $3K) for final art and an original soundtrack would help, but it isn't what I'm asking for.</p>
+      <p>The game is <strong>almost done and self-funded</strong>.</p>
       <p>I'm looking for a <strong>marketing partner</strong>: someone who knows how to get a game like this in front of strategy players, creators and press, and can help it hit its launch window.</p>
       <ul>
         <li>Grow wishlists before <strong>Steam Next Fest (Feb 22, 2027)</strong></li>
@@ -111,6 +111,7 @@
         <li>Press, festivals and showcases</li>
         <li>Open to console and mobile ports</li>
       </ul>
+      <p>Optional: a small budget (about $3K) for final art and an original soundtrack would help me finish faster.</p>
     </div>
   </div>
 </section>
@@ -135,12 +136,12 @@
       <div class="card">
         <table class="facts">
           <tr><th>Modes</th><td>Story campaign, puzzle challenges, custom battles</td></tr>
-          <tr><th>Multiplayer</th><td>Online 1v1 and 2v2, Steam friend invites, join by code or random lobby</td></tr>
-          <tr><th>Vs CPU</th><td>Easy to Extreme. CPU teammates in 2v2</td></tr>
-          <tr><th>Game mods</th><td>6 match rule mods (Sudden Death, Apocalypse, Tech Race and more)</td></tr>
-          <tr><th>Team</th><td>Solo developer (almost 10 years as a software engineer), plus a contract artist</td></tr>
+          <tr><th>Multiplayer</th><td>Online 1v1 and 2v2. Invite friends through Steam or Discord, join by code, or find a random lobby</td></tr>
+          <tr><th>Vs CPU</th><td>5 difficulties: Easy, Normal, Hard, Extreme and a hidden Insane. CPU teammates in 2v2</td></tr>
+          <tr><th>Game mods</th><td>8 match mods: Sudden Death, Apocalypse, Tech Race, Mana Rush, Awakened, Frenzy, Overdrive, Blindfold</td></tr>
+          <tr><th>Team</th><td>Just me, a solo developer (almost 10 years as a software engineer). Some art commissioned from a freelance artist</td></tr>
           <tr><th>Art</th><td>All hand-made by people, no AI</td></tr>
-          <tr><th>Studio</th><td>LunarSol Games</td></tr>
+          <tr><th>Studio</th><td>LunarSol Games (my one-person studio)</td></tr>
           <tr><th>Time to finish</th><td>About 3 months of work</td></tr>
         </table>
       </div>
@@ -154,7 +155,7 @@
     <h2 class="title">Demo so far</h2>
     <p class="lede">The Steam demo went live on October 31, 2026. Players who start it stay: half of them play 23 minutes or more.</p>
 
-    <div class="stats-grid" data-group="demo" style="grid-template-columns:repeat(2,1fr);max-width:560px;margin:0 auto"></div>
+    <div class="stats-grid" data-group="demo" style="grid-template-columns:1fr;max-width:280px;margin:0 auto"></div>
 
     <p class="updated">Last updated: <span id="updated"></span></p>
   </div>
@@ -178,7 +179,7 @@
           <li>Stickers to send in online matches</li>
           <li>Leaderboards</li>
           <li>Online 1v1 and 2v2, Steam and Discord invites</li>
-          <li>CPU opponents from Easy to Extreme, 2 maps</li>
+          <li>CPU opponents on 5 difficulties, 2 maps</li>
           <li>6 languages</li>
           <li>Free browser version on itch.io</li>
         </ul>
@@ -279,13 +280,14 @@ const UPDATED = "November 15, 2026";
 const STATS = {
   demo: [
     { label: "Typical playtime", value: 23, suffix: " min", note: "median, Steam demo" },
-    { label: "Added the demo on Steam", value: 790 },
   ],
 };
 
-const COMPS_NOTE = "Copies and revenue are Gamalytic estimates (gross, base game), October 2026.";
+const COMPS_NOTE = "Copies and revenue are Gamalytic estimates (gross, base game), October and November 2026.";
 const COMPS = [
   { name: "Warpips", year: "2022", price: "$16.99", publisher: "Daedalic", reviews: 5236, copies: 405700, revenue: 1900000 },
+  { name: "CastleStorm", year: "2013", price: "$9.99", publisher: "Zen Studios", reviews: 1600, copies: 181300, revenue: 811700 },
+  { name: "Mushroom Wars 2", year: "2017", price: "$14.99", publisher: "Azur Games", reviews: 977, copies: 44000, revenue: 368200 },
   { name: "Swords and Soldiers HD", year: "2010", price: "$5.99", publisher: "Atari", reviews: 1062, copies: 64100, revenue: 204700 },
   { name: "Operation: Polygon Storm", year: "2024", price: "$14.99", publisher: "Untold Tales", reviews: 292, copies: 15900, revenue: 133000 },
   { name: "Swords and Soldiers 2 Shawarmageddon", year: "2018", price: "$9.99", publisher: "Atari", reviews: 324, copies: 23300, revenue: 117100 },
