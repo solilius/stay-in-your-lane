@@ -33,6 +33,11 @@
     .card li { margin: .3em 0; }
     .ask { max-width: 820px; margin: 0 auto; font-size: 1.12rem; }
     .ask strong { color: var(--wood); }
+    .pitch { max-width: 900px; margin: 0 auto; text-align: center; padding: 38px 44px; }
+    .pitch p { font-size: clamp(1.15rem, 2.2vw, 1.4rem); line-height: 1.6; margin: 0 0 .9em; }
+    .pitch .pitch__head { font: clamp(1.6rem, 3.6vw, 2.3rem)/1.25 var(--font-head); color: var(--wood); margin-bottom: .7em; }
+    .pitch .pitch__foot { margin: 0; font-weight: 900; color: var(--wood); }
+    @media (max-width: 640px) { .pitch { padding: 26px 22px; } }
     .grid2 { display: grid; grid-template-columns: 1fr 1fr; gap: 26px; }
     .facts { width: 100%; border-collapse: collapse; }
     .facts th, .facts td { text-align: left; padding: .65em .8em; border-bottom: 2px dashed rgba(43,26,14,.25); vertical-align: top; }
@@ -100,9 +105,10 @@
 <section class="pub-sec pub-sec--paper">
   <div class="wrap">
     <h2 class="title">The game</h2>
-    <div class="card ask">
-      <p>Stay in Your Lane is a side-scrolling strategy game in the spirit of Age of War and Swords &amp; Soldiers. Build your economy, unlock units and spells, and send Gym Rats, Holy Cows and High Horses down one lane to push the enemy back until their base falls. Play the story campaign and puzzle challenges, or take it online in 1v1 and team up with a friend in 2v2.</p>
-      <p><strong>The demo is out on Steam, and the release date is open.</strong></p>
+    <div class="card pitch">
+      <p class="pitch__head">The lane battles a generation grew up with on Flash, made deeper and built to play with friends.</p>
+      <p>Stay in Your Lane is a side-scrolling strategy game. Build your economy, upgrade your base, and send waves of Gym Rats, Holy Cows and High Horses down one lane until the enemy base falls. Play the story campaign and puzzle challenges, or go online in 1v1 and team up with a friend in 2v2.</p>
+      <p class="pitch__foot">The demo is out on Steam, and the release date is open.</p>
     </div>
   </div>
 </section>
