@@ -78,7 +78,7 @@
   <a class="nav__logo" href="../"><img src="../assets/img/logo.webp" alt="Stay in Your Lane"></a>
   <nav class="nav__links" style="display:flex">
     <a href="#trailer">Trailer</a>
-    <a href="#numbers">Demo</a>
+    <a href="#numbers">Numbers</a>
     <a href="#facts">Facts</a>
     <a href="#contact">Contact</a>
   </nav>
@@ -162,10 +162,10 @@
 <!-- NUMBERS -->
 <section class="pub-sec pub-sec--paper" id="numbers">
   <div class="wrap">
-    <h2 class="title">Demo so far</h2>
-    <p class="lede">The Steam demo went live on October 31, 2026. Players who start it stay: half of them play 23 minutes or more, above the typical Steam demo (14 minutes, How To Market A Game benchmark).</p>
+    <h2 class="title">Numbers so far</h2>
+    <p class="lede">Wishlists are growing by about 35 a week. The Steam demo went live on October 31, 2026, and players who start it stay: half of them play 22 minutes or more, above the typical Steam demo (14 minutes, How To Market A Game benchmark).</p>
 
-    <div class="stats-grid" data-group="demo" style="grid-template-columns:1fr;max-width:280px;margin:0 auto"></div>
+    <div class="stats-grid" data-group="demo" style="grid-template-columns:repeat(2,1fr);max-width:560px;margin:0 auto"></div>
 
     <p class="updated">Last updated: <span id="updated"></span></p>
   </div>
@@ -299,11 +299,12 @@
 
 <script>
 // ============ UPDATE YOUR NUMBERS HERE ============
-const UPDATED = "November 15, 2026";
+const UPDATED = "November 18, 2026";
 
 const STATS = {
   demo: [
-    { label: "Typical playtime", value: 23, suffix: " min", note: "median, Steam demo" },
+    { label: "Wishlists", value: 290, note: "+34 in the last week" },
+    { label: "Typical demo playtime", value: 22, suffix: " min", note: "median, Steam demo" },
   ],
 };
 
