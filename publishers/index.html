@@ -56,6 +56,10 @@
     .cast { max-width: 1100px; margin: 28px auto 0; text-align: center; padding: 34px 40px; }
     .cast h3 { font-size: clamp(1.6rem, 3.2vw, 2.1rem); color: var(--wood); }
     .cast .cast__lead { font-weight: 900; font-size: clamp(1.1rem, 2vw, 1.3rem); color: var(--ink); margin-bottom: 1em; }
+    .cast-wide { max-width: 1100px; margin: 0 auto; }
+    .cast-story { max-width: 760px; margin: 22px auto 0; text-align: center; padding: 26px 32px; }
+    .cast-story h3 { color: var(--wood); }
+    .cast-story p { font-size: clamp(1.05rem, 2vw, 1.25rem); line-height: 1.6; margin: 0; }
     .cast-banners img { display: block; width: 100%; height: auto; margin: 0 0 12px; }
     .cast-grid { display: none; }
     @media (max-width: 700px) { .cast-banners { display: none; } .cast-grid { display: block; } }
@@ -148,25 +152,6 @@
       <p>Stay in Your Lane is a side-scrolling strategy game. Build your economy, upgrade your base, and send waves of Gym Rats, Holy Cows and High Horses down one lane until the enemy base falls. Play the story campaign and puzzle challenges, or go online in 1v1 and team up with a friend in 2v2.</p>
       <p class="pitch__foot">The demo is out on Steam, and the release date is open.</p>
     </div>
-    <div class="card cast">
-      <h3>Meet the cast</h3>
-      <p class="cast__lead">Every unit is an English expression come to life.</p>
-      <div class="cast-banners">
-        <img src="../assets/img/cast-herd-full-v3.webp" alt="The Herd: Gold Digger, Gym Rat, Hog Wash, Black Sheep, Holy Cow and High Horse" width="2200" height="430" loading="lazy">
-        <img src="../assets/img/cast-grove-full-v3.webp" alt="Verdant Grove: Guerrilla Warfare, Paper Tiger, Web Designer, Snake in the Grass, Monkey Business, Fire Ant and Busy Bee" width="2200" height="430" loading="lazy">
-      </div>
-      <div class="cast-grid">
-      <div class="cast-row cast-row--herd">
-        <div class="cast-row__fac"><img src="../assets/img/crest-herd.webp" alt="" width="90" height="90" loading="lazy"><span>The Herd</span></div>
-        <div class="cast-row__units"><figure class="cu"><img src="../assets/img/cast-units/gold-digger.webp" alt="Gold Digger" width="320" height="320" loading="lazy"><figcaption>Gold Digger</figcaption></figure><figure class="cu"><img src="../assets/img/cast-units/gym-rat.webp" alt="Gym Rat" width="320" height="320" loading="lazy"><figcaption>Gym Rat</figcaption></figure><figure class="cu"><img src="../assets/img/cast-units/hog-wash.webp" alt="Hog Wash" width="320" height="320" loading="lazy"><figcaption>Hog Wash</figcaption></figure><figure class="cu"><img src="../assets/img/cast-units/black-sheep.webp" alt="Black Sheep" width="320" height="320" loading="lazy"><figcaption>Black Sheep</figcaption></figure><figure class="cu"><img src="../assets/img/cast-units/holy-cow.webp" alt="Holy Cow" width="320" height="320" loading="lazy"><figcaption>Holy Cow</figcaption></figure><figure class="cu"><img src="../assets/img/cast-units/high-horse.webp" alt="High Horse" width="320" height="320" loading="lazy"><figcaption>High Horse</figcaption></figure></div>
-      </div>
-      <div class="cast-row cast-row--grove">
-        <div class="cast-row__fac"><img src="../assets/img/crest-grove.webp" alt="" width="90" height="90" loading="lazy"><span>Verdant Grove</span></div>
-        <div class="cast-row__units"><figure class="cu"><img src="../assets/img/cast-units/guerrilla-warfare.webp" alt="Guerrilla Warfare" width="320" height="320" loading="lazy"><figcaption>Guerrilla Warfare</figcaption></figure><figure class="cu"><img src="../assets/img/cast-units/paper-tiger.webp" alt="Paper Tiger" width="320" height="320" loading="lazy"><figcaption>Paper Tiger</figcaption></figure><figure class="cu"><img src="../assets/img/cast-units/web-designer.webp" alt="Web Designer" width="320" height="320" loading="lazy"><figcaption>Web Designer</figcaption></figure><figure class="cu"><img src="../assets/img/cast-units/snake-in-the-grass.webp" alt="Snake in the Grass" width="320" height="320" loading="lazy"><figcaption>Snake in the Grass</figcaption></figure><figure class="cu"><img src="../assets/img/cast-units/monkey-business.webp" alt="Monkey Business" width="320" height="320" loading="lazy"><figcaption>Monkey Business</figcaption></figure><figure class="cu"><img src="../assets/img/cast-units/fire-ant.webp" alt="Fire Ant" width="320" height="320" loading="lazy"><figcaption>Fire Ant</figcaption></figure><figure class="cu"><img src="../assets/img/cast-units/busy-bee.webp" alt="Busy Bee" width="320" height="320" loading="lazy"><figcaption>Busy Bee</figcaption></figure></div>
-      </div>
-      </div>
-      <p>The campaign follows Buck, a young goat told by an angel in a dream to follow the lane and never turn back. On the way he meets a Black Sheep who'd rather be alone, a High Horse who can't stop admiring himself, and a stone that blocks the road and couldn't care less.</p>
-    </div>
   </div>
 </section>
 
@@ -189,6 +174,34 @@
       <button data-src="../assets/img/shots/last-stand.webp"><img loading="lazy" src="../assets/img/shots/last-stand.webp" alt="Holding the line at the base in the jungle"></button>
       <button data-src="../assets/img/shots/clash-peaks.webp"><img loading="lazy" src="../assets/img/shots/clash-peaks.webp" alt="A large battle with both armies on screen"></button>
       <button data-src="../assets/img/shots/push-jungle.webp"><img loading="lazy" src="../assets/img/shots/push-jungle.webp" alt="Pushing toward the enemy base in the jungle"></button>
+    </div>
+  </div>
+</section>
+
+<!-- CHARACTERS -->
+<section class="pub-sec pub-sec--sky" id="characters">
+  <div class="wrap">
+    <h2 class="title">Who's in the lane</h2>
+    <p class="lede">Every unit is an English expression come to life.</p>
+    <div class="cast-wide">
+      <div class="cast-banners">
+        <img src="../assets/img/cast-herd-full-v3.webp" alt="The Herd: Gold Digger, Gym Rat, Hog Wash, Black Sheep, Holy Cow and High Horse" width="2200" height="430" loading="lazy">
+        <img src="../assets/img/cast-grove-full-v3.webp" alt="Verdant Grove: Guerrilla Warfare, Paper Tiger, Web Designer, Snake in the Grass, Monkey Business, Fire Ant and Busy Bee" width="2200" height="430" loading="lazy">
+      </div>
+      <div class="cast-grid">
+      <div class="cast-row cast-row--herd">
+        <div class="cast-row__fac"><img src="../assets/img/crest-herd.webp" alt="" width="90" height="90" loading="lazy"><span>The Herd</span></div>
+        <div class="cast-row__units"><figure class="cu"><img src="../assets/img/cast-units/gold-digger.webp" alt="Gold Digger" width="320" height="320" loading="lazy"><figcaption>Gold Digger</figcaption></figure><figure class="cu"><img src="../assets/img/cast-units/gym-rat.webp" alt="Gym Rat" width="320" height="320" loading="lazy"><figcaption>Gym Rat</figcaption></figure><figure class="cu"><img src="../assets/img/cast-units/hog-wash.webp" alt="Hog Wash" width="320" height="320" loading="lazy"><figcaption>Hog Wash</figcaption></figure><figure class="cu"><img src="../assets/img/cast-units/black-sheep.webp" alt="Black Sheep" width="320" height="320" loading="lazy"><figcaption>Black Sheep</figcaption></figure><figure class="cu"><img src="../assets/img/cast-units/holy-cow.webp" alt="Holy Cow" width="320" height="320" loading="lazy"><figcaption>Holy Cow</figcaption></figure><figure class="cu"><img src="../assets/img/cast-units/high-horse.webp" alt="High Horse" width="320" height="320" loading="lazy"><figcaption>High Horse</figcaption></figure></div>
+      </div>
+      <div class="cast-row cast-row--grove">
+        <div class="cast-row__fac"><img src="../assets/img/crest-grove.webp" alt="" width="90" height="90" loading="lazy"><span>Verdant Grove</span></div>
+        <div class="cast-row__units"><figure class="cu"><img src="../assets/img/cast-units/guerrilla-warfare.webp" alt="Guerrilla Warfare" width="320" height="320" loading="lazy"><figcaption>Guerrilla Warfare</figcaption></figure><figure class="cu"><img src="../assets/img/cast-units/paper-tiger.webp" alt="Paper Tiger" width="320" height="320" loading="lazy"><figcaption>Paper Tiger</figcaption></figure><figure class="cu"><img src="../assets/img/cast-units/web-designer.webp" alt="Web Designer" width="320" height="320" loading="lazy"><figcaption>Web Designer</figcaption></figure><figure class="cu"><img src="../assets/img/cast-units/snake-in-the-grass.webp" alt="Snake in the Grass" width="320" height="320" loading="lazy"><figcaption>Snake in the Grass</figcaption></figure><figure class="cu"><img src="../assets/img/cast-units/monkey-business.webp" alt="Monkey Business" width="320" height="320" loading="lazy"><figcaption>Monkey Business</figcaption></figure><figure class="cu"><img src="../assets/img/cast-units/fire-ant.webp" alt="Fire Ant" width="320" height="320" loading="lazy"><figcaption>Fire Ant</figcaption></figure><figure class="cu"><img src="../assets/img/cast-units/busy-bee.webp" alt="Busy Bee" width="320" height="320" loading="lazy"><figcaption>Busy Bee</figcaption></figure></div>
+      </div>
+      </div>
+    </div>
+    <div class="card cast-story">
+      <h3>The campaign</h3>
+      <p>The campaign follows Buck, a young goat told by an angel in a dream to follow the lane and never turn back. On the way he meets a Black Sheep who'd rather be alone, a High Horse who can't stop admiring himself, and a stone that blocks the road and couldn't care less.</p>
     </div>
   </div>
 </section>
